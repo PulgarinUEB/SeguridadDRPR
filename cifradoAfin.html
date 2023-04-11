@@ -62,15 +62,17 @@
                            <ul class="controls">
                               <li class="row from">
                               
-                                 <label>Ingrese el valor de a y b</label>
-                                 <!-- TextField para ingresar a y b -->
-                                 <input type="number" id="a_input" placeholder="a" class="input_a_b"> <br>
-                                 <input type="number" id="b_input" placeholder="b" class="input_a_b">
-                                
-                                 <button id="frecuency-button" class="frecuency-button" data-toggle='modal' data-target='#gfgmodal' id='record_click' onclick='handleFrecuencyButtonClick()'>Ver frecuencia</button>
+                                    <label>Ingrese el valor de a y b</label>
+                                    <!-- TextField para ingresar a y b -->
+                                    <input type="number" id="a_input" placeholder="a" class="input_a_b"> <br>
+                                    <input type="number" id="b_input" placeholder="b" class="input_a_b"> <br>
+                                    
                               </li>
-                            
                            </ul>
+                           
+                           <ui class="controls">
+                                <button id="frecuency-button" class="frecuency-button" data-toggle='modal' data-target='#gfgmodal' id='record_click' onclick='handleFrecuencyButtonClick()'>Ver frecuencia</button>    
+                           </ui>
                         </div>
                         
                         <button id="cipher-button">Cifrar</button>
@@ -85,7 +87,10 @@
 	
 	<!-- Nav Bar -->
 	<div class="toggler">
-		<span id="openNav">&#9776; Seguridad de la Información</span>
+		<span id="openNav">
+            <img src="Images/Menu_Logo.png" style="height: 25px;" />
+            <label class="login100-form-title p-b-34 p-t-27">&#9; Seguridad de la Información</label>
+        </span>
 		<span id="togglerUser">Autenticarse</span>
 	</div>
 	
@@ -101,27 +106,28 @@
 
 	<!-- Footer -->
 	<footer>
-		<div class="footer">
-			<div class="footer-content">
-				<div class="footer-section about">
-                    <a class="logo2" href="#"><img src="Images/Logo2.png" alt="#" /></a>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a class="logo2" href="#"><img src="Images/Logo.png" alt="#"/></a>
                 </div>
-
-				<div class="footer-section links">
+    
+                <div class="footer-section">
                     <ul class="social_icon">
-                        <li> <a href="https://www.twitter.com/Pulgarin_Rojas"><i class="fa fa-twitter"></i></a></li>
-                        <li> <a href="https://www.linkedin.com/in/daniel-rodrigo-pulgar%C3%ADn-rojas-13455215b"> <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li> <a href="https://www.instagram.com/Pulgarin_Rojas"><i class="fa fa-instagram"></i></a></li>
-                     </ul>
+                        <li><a href="https://www.twitter.com/Pulgarin_Rojas"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/daniel-rodrigo-pulgar%C3%ADn-rojas-13455215b"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/Pulgarin_Rojas"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
                 </div>
-                
-			</div>
-
-			<div class="footer-info">
-				&copy; 2023, Creado por Daniel R. Pulgarín R.
-			</div>
-		</div>
-	</footer>
+    
+                <div class="footer-section">
+                    &copy; 2023, Creado por Daniel R. Pulgarín R.
+                    <br> <br>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 
 
 

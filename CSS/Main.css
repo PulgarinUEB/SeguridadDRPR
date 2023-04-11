@@ -26,7 +26,7 @@ main {
 /* Header */
 header {
     color: #393e46;
-    height: 50px;
+    height: 45px;
     position: relative;
     z-index: -1;
     background-size: contain; /* para cambiar a full - cover */
@@ -127,12 +127,12 @@ nav ul {
 /* Footer */
 .footer {
     background: whitesmoke;
-    color: rgb(255, 255, 255);
+    color: rgb(25, 25, 25);
     height: 150px;
 }
 
 .footer .footer-content {
-    height: 100px;
+    height: 100%;
 }
 
 .footer .footer-info {
@@ -144,3 +144,30 @@ nav ul {
     text-align: center;
     bottom: 0px;
 }
+
+.footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer-section {
+	flex: 1 1 100%;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.footer-section {
+		flex: 1;
+		text-align: left;
+	}
+}
+
+/* Estilos para smartphones */
+@media only screen and (max-width: 767px) {
+    .login100-form-title {
+        display: none; /* Oculta el título en smartphones */
+    }
+}
+
