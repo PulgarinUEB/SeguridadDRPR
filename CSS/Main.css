@@ -1,0 +1,146 @@
+
+html, body {
+    height: 90%;
+}
+
+body {
+    background: rgb(248, 248, 248);
+    padding: 0px;
+    margin: 0px;
+    font-family: "Montserrat", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body * {
+    transition: all 0.5s ease-in-out;
+}
+
+main {
+    margin-top: 0px;
+    padding-top: 50px;
+}
+
+.page-wrapper {
+    min-height: 100%;
+}
+
+/* Header */
+header {
+    color: #393e46;
+    height: 50px;
+    position: relative;
+    z-index: -1;
+    background-size: contain; /* para cambiar a full - cover */
+    margin-top: -50px;
+}
+
+header h1 {
+    padding-top: 100px;
+    font-size: 50px;
+    margin-left: 100px;
+}
+
+
+/* Top Bar */
+.toggler {
+    padding: 14px;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    border-bottom: 0.3px solid;
+    border-color: rgb(230, 230, 230);
+}
+
+nav ul {
+    list-style: none;
+}
+
+/* Side Nav List */
+.sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 99;
+    top: 0px;
+    left: 0px;
+    background: whitesmoke;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.sidenav h2 {
+    color: #16697a;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.sidenav a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #1b262c;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #db6400;
+}
+
+.sidenav .closebtn{
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    font-size: 36px;
+}
+
+#usersbtn {
+    display: none;
+}
+
+#companiesbtn {
+    display: none;
+}
+
+#dashboardbtn {
+    display: none;
+}
+
+/* Top Bar */
+#openNav {
+    padding: 10px;
+    border-radius: 4px;
+    color: #16697a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#togglerUser {
+    position: absolute;
+    right: 50px;
+    font-size: 13px;
+    border-radius: 4px;
+    color: #16697a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: whitesmoke;
+    color: rgb(255, 255, 255);
+    height: 150px;
+}
+
+.footer .footer-content {
+    height: 100px;
+}
+
+.footer .footer-info {
+    font-size: 12px;
+    background: whitesmoke;
+    color: rgb(25, 25, 25);
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+}

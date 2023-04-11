@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./CSS/Util.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/Auth.css">
+<!--===============================================================================================-->
+<title>Autenticación | Flow Control</title>	
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<span class="login100-form-logo">
+					<img src="./images/Logo.png" alt="Logo" width="100%">
+				</span>
+
+				<span class="login100-form-title p-b-34 p-t-27">
+					Seguridad de la Información
+					<div style="font-size: 15px;">2023</div>
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate = "Enter username">
+					<input class="input100" type="email" name="username" placeholder="Correo Electrónico" id="email_field">
+					<span class="focus-input100" data-placeholder="&#xf207;"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Enter password">
+					<input class="input100" type="password" name="pass" placeholder="Contraseña" id="password_field">
+					<span class="focus-input100" data-placeholder="&#xf191;"></span>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" onclick="login()">
+						Iniciar Sesión
+					</button>
+				</div>
+
+				<!--
+				<div class="text-center p-t-90">
+					<a class="txt1" href="#">
+						¿Olvido su contraseña?
+					</a>
+				</div>
+				-->
+			</div>
+		</div>
+	</div>
+    
+    <!-- Script/Java Script -->
+	<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+    <script src="./JS/Main.js"></script>
+    <script src="./JS/Auth.js"></script>
+
+</body>
+</html>
