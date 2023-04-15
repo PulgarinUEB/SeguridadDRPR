@@ -31,30 +31,54 @@ function quitarTildes(cadena) {
   });
 }
 
-function encontrarParametrosAfin(ciphertext) {
-  let frecuencias = {};
-    for (let i = 0; i < ciphertext.length; i++) {
-        let char = ciphertext.charAt(i);
-        if (alphabet.includes(char)) {
-            if (frecuencias[char]) {
-                frecuencias[char]++;
-            } else {
-                frecuencias[char] = 1;
-            }
-        }
+function resolverSistemaDeEcuaciones(X, Y) {
+  const mod = 27;
+  const E = 4;
+  const A = 0;
+
+  // Calcular inversos modulares
+  const EInverso = euclidesExtendido(E, mod)[0];
+  const AInverso = euclidesExtendido(A, mod)[0];
+
+  // Resolver para a y b
+  const a = ((X - Y) * EInverso) % mod;
+  const b = ((Y - a * A) + mod) % mod;
+
+  return { a, b };
+}
+
+// Función auxiliar para calcular el inverso modular usando el algoritmo de Euclides extendido
+function euclidesExtendido(a, b) {
+  if (b === 0) {
+    return [1, 0];
+  }
+
+  const [x, y] = euclidesExtendido(b, a % b);
+  return [y, x - Math.floor(a / b) * y];
+}
+
+function obtenerDosLetrasMasFrecuentes(texto) {
+  // Convertir el texto a minúsculas y eliminar espacios en blanco
+  texto = texto.toUpperCase().replace(/\s/g, '');
+
+  // Crear un objeto para contar la frecuencia de las letras
+  const frecuenciaLetras = {};
+  for (let letra of texto) {
+    if (frecuenciaLetras[letra]) {
+      frecuenciaLetras[letra]++;
+    } else {
+      frecuenciaLetras[letra] = 1;
     }
+  }
 
-    let letraMasFrecuente1 = Object.keys(frecuencias).reduce(function(a, b) { return frecuencias[a] > frecuencias[b] ? a : b });
-    delete frecuencias[letraMasFrecuente1];
-    let letraMasFrecuente2 = Object.keys(frecuencias).reduce(function(a, b) { return frecuencias[a] > frecuencias[b] ? a : b });
+  // Ordenar las letras por frecuencia descendente
+  const letrasOrdenadas = Object.keys(frecuenciaLetras).sort((a, b) => frecuenciaLetras[b] - frecuenciaLetras[a]);
 
-    let a = (alphabet.indexOf(letraMasFrecuente1) - alphabet.indexOf(letraMasFrecuente2) + alphabet.length) % alphabet.length;
-    let b = (alphabet.indexOf('K') - a * alphabet.indexOf('A')) % alphabet.length;
-    if (b < 0) {
-        b += alphabet.length;
-    }
+  // Obtener las dos primeras letras más frecuentes
+  const letra1 = letrasOrdenadas[0];
+  const letra2 = letrasOrdenadas[1];
 
-    return { a: a, b: b };
+  return { letra1, letra2 };
 }
 
 function affineCipherEncrypt(text, a, b) {
@@ -129,22 +153,34 @@ function handleDecipherButtonClick() {
     let text = fromText.value.trim();
     let cleanText = quitarTildes(text);
 
-    let parametros = encontrarParametrosAfin(cleanText);
-    let b = parametros.b;
-    let a = parametros.a;
-    let m = 27;
-    console.log(a, b);
+    resultOutput.textContent = 'Buscando valores a y b...';
+    const { letra1, letra2 } = obtenerDosLetrasMasFrecuentes(cleanText);
 
-    // Utilizamos un bucle para probar todos los posibles valores de "a" (0 a 26)
-    for (let i = 0; i < 27; i++) {
-      if ((i * 4) % m === (23 - b)) {
-        console.log("El valor de a es:", i);
-        a = i;
-        break; // Salimos del bucle cuando encontramos el valor de a
-      }
+    // Obtener la posición de letra1 y letra2 en el alfabeto
+    const posicionLetra1 = alphabet.indexOf(letra1);
+    const posicionLetra2 = alphabet.indexOf(letra2);
+
+    // Imprimir los resultados
+    console.log(`La letra más frecuente es "${letra1}" y su posición en el alfabeto es ${posicionLetra1}.`);
+    console.log(`La segunda letra más frecuente es "${letra2}" y su posición en el alfabeto es ${posicionLetra2}.`);
+
+    const { a, b } = resolverSistemaDeEcuaciones(posicionLetra1, posicionLetra2);
+
+    console.log("El valor de a es:", a);
+    console.log("El valor de b es:", b);
+
+    var realA = a;
+
+    const a_input = document.getElementById("a_input");
+    const b_input = document.getElementById("b_input");
+    a_input.value = a;
+    b_input.value = b;
+
+    if (a < 0) {
+      console.log("El valor de a es negativo, por lo que se sumará 27 para obtener el valor positivo.");
+      realA = a + 27;
+      console.log(realA);
     }
-
-    console.log(a, b);
     
     resultOutput.textContent = 'Desencriptando...';
 
@@ -152,7 +188,6 @@ function handleDecipherButtonClick() {
         resultOutput.textContent = 'No se pudieron encontrar los valores a y b.';
     } 
     else {
-
       const ciphertext = affineCipherDecrypt(cleanText, a, b);
       resultOutput.textContent = ciphertext;
     }
