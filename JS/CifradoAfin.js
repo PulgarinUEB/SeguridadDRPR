@@ -173,8 +173,6 @@ function handleDecipherButtonClick() {
 
     const a_input = document.getElementById("a_input");
     const b_input = document.getElementById("b_input");
-    a_input.value = a;
-    b_input.value = b;
 
     if (a < 0) {
       console.log("El valor de a es negativo, por lo que se sumará 27 para obtener el valor positivo.");
@@ -182,13 +180,16 @@ function handleDecipherButtonClick() {
       console.log(realA);
     }
     
+    a_input.value = realA;
+    b_input.value = b;
+
     resultOutput.textContent = 'Desencriptando...';
 
     if (isNaN(a) || isNaN(b)) {
         resultOutput.textContent = 'No se pudieron encontrar los valores a y b.';
     } 
     else {
-      const ciphertext = affineCipherDecrypt(cleanText, a, b);
+      const ciphertext = affineCipherDecrypt(cleanText, realA, b);
       resultOutput.textContent = ciphertext;
     }
 }
