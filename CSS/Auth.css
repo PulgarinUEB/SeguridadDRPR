@@ -61,7 +61,7 @@
   
   a:hover {
       text-decoration: none;
-    color: #fff;
+    color: #003471;
   }
   
   /*---------------------------------------------*/
@@ -108,7 +108,7 @@
   textarea:focus::-moz-placeholder { color:transparent; }
   textarea:focus:-ms-input-placeholder { color:transparent; }
   
-  input::-webkit-input-placeholder { color: #fff;}
+  input::-webkit-input-placeholder { color: #003471;}
   input:-moz-placeholder { color: #fff;}
   input::-moz-placeholder { color: #fff;}
   input:-ms-input-placeholder { color: #fff;}
@@ -186,21 +186,18 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,0.9);
+    background-color: #f9f9f8;
   }
   
   .wrap-login100 {
     width: 450px;
-    border-radius: 20px;
+    border-radius: 10%;
     overflow: hidden;
-    padding: 55px 55px 37px 55px;
-    background: #9152f8;
-    background: -webkit-linear-gradient(top, #c3edea, #16697a);
-    background: -o-linear-gradient(top, #16697a, whitesmoke);
-    background: -moz-linear-gradient(top, whitesmoke, #16697a);
-    background: linear-gradient(top, #16697a, whitesmoke);
+    padding: 50px;
+    background: #FFF;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
   }
-  
+
   
   /*------------------------------------------------------------------
   [ Form ]*/
@@ -212,7 +209,6 @@
   .login100-form-logo {
     font-size: 60px; 
     color: #333333;
-  
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -228,16 +224,22 @@
   }
   
   .login100-form-title {
-    font-family: Poppins-Medium;
     font-size: 30px;
-    color: #fff;
+    font-weight: bold;
+    color: #003471;
     line-height: 1.2;
-    text-align: right;
-    text-transform: uppercase;
-  
+    text-align: center;  
     display: block;
   }
   
+  .login-secondTitle {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #003471;
+    line-height: 1.2;
+    text-align: center;  
+    display: block;
+  }
   
   /*------------------------------------------------------------------
   [ Input ]*/
@@ -252,9 +254,8 @@
   .input100 {
     font-family: Poppins-Regular;
     font-size: 16px;
-    color: #fff;
+    color: #003471;
     line-height: 1.2;
-  
     display: block;
     width: 100%;
     height: 45px;
@@ -281,20 +282,17 @@
     left: 0;
     width: 0;
     height: 2px;
-  
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
-  
-    background: #fff;
+    background: #003471;
   }
   
   .focus-input100::after {
     font-family: Material-Design-Iconic-Font;
     font-size: 22px;
-    color: #fff;
-  
+    color: #003471;
     content: attr(data-placeholder);
     display: block;
     width: 100%;
@@ -352,7 +350,7 @@
   .label-checkbox100 {
     font-family: Poppins-Regular;
     font-size: 13px;
-    color: #fff;
+    color: #003471;
     line-height: 1.2;
   
     display: block;
@@ -378,7 +376,7 @@
     width: 16px;
     height: 16px;
     border-radius: 2px;
-    background: #fff;
+    background: #003471;
     left: 0;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -409,9 +407,8 @@
   .login100-form-btn {
     font-family: Poppins-Medium;
     font-size: 16px;
-    color: #555555;
+    color: #FFF;
     line-height: 1.2;
-  
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -423,10 +420,9 @@
     min-width: 200px;
     height: 50px;
     border-radius: 25px;
-    background: whitesmoke;
+    background: #003471;
     position: relative;
     z-index: 1;
-  
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -441,11 +437,10 @@
     width: 100%;
     height: 100%;
     border-radius: 25px;
-    background-color: #fff;
+    background-color: #003471;
     top: 0;
     left: 0;
     opacity: 1;
-  
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -453,7 +448,7 @@
   }
   
   .login100-form-btn:hover {
-    color: #16697a;
+    background-color: #87CBB9;
   }
   
   .login100-form-btn:hover:before {
@@ -483,7 +478,7 @@
     content: attr(data-validate);
     position: absolute;
     max-width: 70%;
-    background-color: #fff;
+    background-color: #003471;
     border: 1px solid #c80000;
     border-radius: 2px;
     padding: 4px 25px 4px 10px;

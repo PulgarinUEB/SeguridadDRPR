@@ -37,10 +37,9 @@
 	  background-color: #777;
 	}
 	img {
-  border-radius: 20%;
-}
+  		zwborder-radius: 20%;
+	}
 	</style>
-
 <body>
 	
 	<!-- Page Content -->
@@ -49,34 +48,34 @@
 			<!-- Data Table -->
 			<div class="container">
 				<br>
-				<h1 style="color: #16697a; font-size: 50px; font-weight: bold;">Cifrado Afín</h1>
+				<h1 id="containerTitleH1">Cifrado Afín</h1>
 
 				<div class="card-body">
 				
                     <div class="container">
                         <div class="wrapper">
                            <div class="text-input">
-                              <textarea spellcheck="false" class="from-text" placeholder="Ingresar texto..."></textarea>
-                              <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Cifrado / Descifrado"></textarea>
+                        		<textarea spellcheck="false" class="from-text" placeholder="Ingresar texto..."></textarea>
+                              	<textarea spellcheck="false" readonly disabled class="to-text" placeholder="Cifrado / Descifrado"></textarea>
                            </div>
+
                            <ul class="controls">
                               <li class="row from">
                               
-                                    <label id="a_b_titleLabel">Ingrese el valor de a y b</label>
+                                    <label id="a_b_titleLabel">Valor de a y b</label>
                                     <!-- TextField para ingresar a y b -->
                                     <input type="number" id="a_input" placeholder="a" class="input_a_b"> <br>
                                     <input type="number" id="b_input" placeholder="b" class="input_a_b"> <br>
                                     
                               </li>
+							  	<li class="row to">
+									<button id="frecuency-button" class="frecuency-button" data-toggle='modal' data-target='#gfgmodal' id='record_click' onclick='handleFrecuencyButtonClick()'>Ver frecuencia</button>
+								</li>
                            </ul>
-                           
-                           <ui class="controls">
-                                <button id="frecuency-button" class="frecuency-button" data-toggle='modal' data-target='#gfgmodal' id='record_click' onclick='handleFrecuencyButtonClick()'>Ver frecuencia</button>    
-                           </ui>
                         </div>
                         
-                        <button id="cipher-button">Cifrar</button>
-                        <button id="decipher-button">Descifrar</button>
+                        <button class="cipher-button" id="cipher-button">Cifrar</button>
+                        <button class="decipher-button" id="decipher-button">Descifrar</button>
                      </div>
 				</div>
 			</div>
@@ -88,7 +87,7 @@
 	<!-- Nav Bar -->
 	<div class="toggler">
 		<span id="openNav">
-            <img src="Images/Menu_Logo.png" style="height: 25px;" />
+			<img src="./Images/Menu_Logo.png" id="navBarImage" />
             <label class="login100-form-title p-b-34 p-t-27">&#9; Seguridad de la Información</label>
         </span>
 		<span id="togglerUser">Autenticarse</span>
@@ -114,9 +113,29 @@
     
                 <div class="footer-section">
                     <ul class="social_icon">
-                        <li><a href="https://www.twitter.com/Pulgarin_Rojas"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/daniel-rodrigo-pulgar%C3%ADn-rojas-13455215b"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/Pulgarin_Rojas"><i class="fa fa-instagram"></i></a></li>
+                        <li>	
+							<a href="https://www.twitter.com/Pulgarin_Rojas">
+								<i class="socialIconBtn">
+									<img src="https://img.icons8.com/fluency/48/null/twitter.png">
+								</i>
+							</a>
+						</li>
+
+						<li>	
+							<a href="https://www.instagram.com/Pulgarin_Rojas">
+								<i class="fa fa-instagram">
+									<img src="https://img.icons8.com/fluency/48/null/instagram-new.png">
+								</i>
+							</a>
+						</li>
+
+						<li>	
+							<a href="https://www.linkedin.com/in/daniel-rodrigo-pulgar%C3%ADn-rojas-13455215b">
+								<i class="fa fa-linkedin">
+									<img src="https://img.icons8.com/fluency/48/null/linkedin-2.png">
+								</i>
+							</a>
+						</li>
                     </ul>
                 </div>
     

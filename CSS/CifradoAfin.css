@@ -7,12 +7,14 @@
 }
 
 .wrapper{
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
 }
 .wrapper .text-input{
   display: flex;
   border-bottom: 1px solid #ccc;
+  padding: 10px 0px;
 }
 .text-input .to-text{
   border-radius: 0px;
@@ -27,7 +29,6 @@
   background: none;
   font-size: 14px;
   padding: 10px 15px;
-  border-radius: 5px;
 }
 .text-input textarea::placeholder{
   color: #b7b6b6;
@@ -36,11 +37,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 20px;
+  padding: 10px;
 }
 .controls{
   list-style: none;
-  padding: 12px 15px;
+  padding: 10px 20px 10px 20px;
 }
 
 .controls .row .icons{
@@ -72,15 +73,15 @@
      border: none;
      outline: none;
      background: #003471;
-     padding: 0px;
+     padding: 0px 30px;
 }
 
 .controls .row.from .input_a_b {
      width: 100px;
-     margin: 0px 20px;
+     margin: 0px 10px;
      background-color: transparent;
      display: flex;
-     align-items: center;
+     align-items: left;
      justify-content: space-between;
 }
 
@@ -130,31 +131,47 @@
     background: #5372F0;
 }
 
+.container .cipher-button{
+    background: #87CBB9;
+    width: 100%;
+    align-items: center;
+}
+
+.container .decipher-button{
+  width: 100%;
+}
+
 @media (max-width: 660px){
-.container{
-    padding: 20px;
+  .container{
+      padding: 20px;
+  }
+  .wrapper .text-input{
+      flex-direction: column;
+  }
+  .text-input .to-text{
+      border-left: 0px;
+      border-top: 1px solid #ccc;
+  }
+  .text-input textarea{
+      height: 200px;
+  }
+  .controls .row .icons{
+      display: none;
+  }
+  .container button{
+      padding: 13px;
+      font-size: 16px;
+  }
+  .controls .row select{
+      font-size: 16px;
+  }
+  .controls .exchange{
+      font-size: 14px;
+  }
 }
-.wrapper .text-input{
-    flex-direction: column;
-}
-.text-input .to-text{
-    border-left: 0px;
-    border-top: 1px solid #ccc;
-}
-.text-input textarea{
-    height: 200px;
-}
-.controls .row .icons{
-    display: none;
-}
-.container button{
-    padding: 13px;
-    font-size: 16px;
-}
-.controls .row select{
-    font-size: 16px;
-}
-.controls .exchange{
-    font-size: 14px;
-}
+
+
+.metodo1Btn, .metodo2Btn {
+  display: block;
+  align-items: left;
 }
