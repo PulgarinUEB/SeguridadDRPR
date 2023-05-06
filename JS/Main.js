@@ -7,7 +7,8 @@ const config = {
     storageBucket: "drpr-seguridad2023-1.appspot.com",
     messagingSenderId: "1070788088924",
     appId: "1:1070788088924:web:bf486c3b25d338b5760299",
-    measurementId: "G-L319QKRH91"
+    measurementId: "G-L319QKRH91",
+    databaseURL: "https://drpr-seguridad2023-1-default-rtdb.firebaseio.com/"
   };
 
 firebase.initializeApp(config);

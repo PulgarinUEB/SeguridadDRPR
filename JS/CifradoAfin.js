@@ -391,10 +391,5 @@ $(document).ready( function() {
     document.getElementById('cipher-button').addEventListener('click', handleCipherButtonClick);
     document.getElementById('decipher-button').addEventListener('click', handleDecipherButtonClick);
 
-    document.getElementById('metodo1Btn').addEventListener('click', handleFrecuencyButtonClick);
-    document.getElementById('metodo2Btn').addEventListener('click', handleFrecuencyButtonClick);
-
-    document.querySelector("#close").addEventListener("click", function() {
-        document.querySelector(".popup").style.display = "none";
-    });
+    
 });
